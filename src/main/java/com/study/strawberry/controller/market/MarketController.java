@@ -7,10 +7,8 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,25 +35,6 @@ public class MarketController {
 		}
 		
 		mav.addObject("marketWriteForm", null);
-		return mav;
-	}
-	
-	/*Example - ckeditor4 image upload.
-	 * 이것또한 마찬가지로 테스트 가능할정도의 기능만 넣어두었으니 참고만 하시고
-	 * ckeditor4에서 이미지 업로드 후 반환값이 json형식으로 {uploaded:1, fileName:"파일이름.확장자", url:"/~/파일이름.확장자"}
-	 * 위와같이 반환되어야 ckeditor iframe안에 들어가게 되니 준수해서 넘기시면 됩니다.
-	 * 아래는 코드는 그냥 어떤 파일을 업로드요청하던 테스트파일만 반환해주니 저런 형식인걸로 참고해주심 됩니다.
-	 * */
-	@PostMapping(value = "util/upload")
-	public ModelAndView fileUpload(HttpServletRequest request, HttpServletResponse response, 
-			MultipartHttpServletRequest file) {
-		ModelAndView mav = new ModelAndView("jsonView");
-		
-		System.out.println(file.getFile("upload").getOriginalFilename());
-		
-		mav.addObject("uploaded",1);
-		mav.addObject("fileName","제목 없음.jpg");
-		mav.addObject("url","/resources/image/test/제목 없음.jpg");
 		return mav;
 	}
 	

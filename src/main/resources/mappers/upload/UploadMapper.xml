@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.strawberry.dao.upload.UploadMapper">
+	<select id="overlap" resultType="int">
+		SELECT count(*) FROM strawberry.fileUpload WHERE saveName = #{saveName};
+	</select>
+	<insert id="insertInfo" parameterType="com.study.strawberry.dto.upload.UploadDTO">
+		INSERT INTO strawberry.fileUpload 
+		(`orignName`, `orignType`, `orignSize`, `saveName`, `savePath`, `saveURL`) VALUES 
+		(#{orignName}, #{orignType}, #{orignSize}, #{saveName}, #{savePath}, #{saveURL});
+	</insert>
+</mapper>

@@ -8,5 +8,6 @@
 	<mappers>
 		<mapper class="com.study.strawberry.sign_up.SignUpMapper" />
 		<mapper class="com.study.strawberry.dao.sign.SignMapper" />
+		<mapper class="com.study.strawberry.dao.upload.UploadMapper" />
 	</mappers>
 </configuration>

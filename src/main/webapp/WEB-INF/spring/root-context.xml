@@ -16,7 +16,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<!-- config파일 자동 로드   -->
-    <context:property-placeholder location="classpath:/config/*.properties" file-encoding="UTF-8"/>
+    <context:property-placeholder location="classpath:/config/config.properties" file-encoding="UTF-8"/>
 
 	<!--  MySQL JDBC DataSource -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
